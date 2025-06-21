@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Chat ID</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .success {
+            color: green;
+            font-size: 24px;
+        }
+        .error {
+            color: red;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Telegram Chat ID</h1>
+    {% if chat_id %}
+        <p class="success">Chat ID: {{ chat_id }}</p>
+    {% elif error %}
+        <p class="error">{{ error }}</p>
+    {% else %}
+        <p>No chat ID available. Please send a message to the bot.</p>
+    {% endif %}
+</body>
+</html>
