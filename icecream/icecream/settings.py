@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
-import socket
-from minio import Minio
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +26,7 @@ SECRET_KEY = 'django-insecure-^)^8_@5(atu=ylv+q_gwqk^m&bz_yy^k^=rb=n*(gmcm!(8k0p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "rest_framework",
     'ice.apps.ScraperConfig',
 ]
 
@@ -102,18 +99,6 @@ DATABASES = {
 }
 
 
-# Email configuration (using console backend for development)
-DEBUG = True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # For production with Gmail
-EMAIL_PORT = 465
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'uchimevictor797@gmail.com'
-EMAIL_HOST_PASSWORD = 'xerupsztcthmmvtg'
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
-EMAIL_TIMEOUT = 10  # Prevents indefinite hanging
-
 
 
 
@@ -161,11 +146,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # settings.py
-MINIO_ENDPOINT = '127.0.0.1:9000'  # MinIO server address
-MINIO_ACCESS_KEY = 'zMNW8TmNQOu88kWIxoQP' 
-MINIO_SECRET_KEY = 'Z1PCtTvRTbSwsOqdMWHe5npCMuUeyq9anHprl3OZ' 
-MINIO_BUCKET_NAME = 'skincare'  # Bucket you created
-MINIO_SECURE = True  # True if using HTTPS
 
 #
 MEDIA_URL = '/media/'

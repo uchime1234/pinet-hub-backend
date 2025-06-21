@@ -1,0 +1,19 @@
+
+# Core Django & Server
+Django==4.2.7
+gunicorn==21.2.0
+
+# Django REST Framework
+djangorestframework==3.14.0
+
+# CORS Headers (for frontend-backend communication)
+django-cors-headers==4.3.1
+
+# HTTP Requests (if your backend calls external APIs)
+requests==2.31.0
+
+# Static file handling (optional)
+whitenoise==6.6.0
+
+# Database (if you add PostgreSQL later)
+psycopg2-binary==2.9.9
